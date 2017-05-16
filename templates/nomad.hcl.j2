@@ -32,6 +32,9 @@ addresses {
 {% endif %}
 }
 advertise {
+{% if nomad_advertise_http and nomad_ports_http and nomad_server %}
+  http = "{{ nomad_advertise_http }}:{{ nomad_ports_http }}"
+{% endif %}
 {% if nomad_advertise_rpc and nomad_ports_rpc and nomad_server %}
   rpc = "{{ nomad_advertise_rpc }}:{{ nomad_ports_rpc }}"
 {% endif %}
