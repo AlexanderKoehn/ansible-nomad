@@ -12,7 +12,7 @@ enable_debug = {{ nomad_enable_debug | lower }}
 consul {
   address = "{{ nomad_consul_address_http }}"
   auto_advertise = {{ nomad_consul_auto_advertise | lower }}
-  checks_use_advertise = {{ nomad_consul_checks_use_advertise }}
+  checks_use_advertise = {{ nomad_consul_checks_use_advertise | lower }}
   client_auto_join = {{ nomad_consul_client_auto_join | lower }}
   client_service_name = "{{ nomad_consul_client_service_name }}"
   server_auto_join = {{ nomad_consul_server_auto_join | lower }}
