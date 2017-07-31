@@ -1,8 +1,8 @@
 ---
 # defaults file for nomad
 
-nomad_version: 0.4.1
-nomad_sha256sum: 0cdb5dd95c918c6237dddeafe2e9d2049558fea79ed43eacdfcd247d5b093d67
+nomad_version: 0.6.0
+nomad_sha256sum: fcf108046164cfeda84eab1c3047e36ad59d239b66e6b2f013e6c93064bc6313
 
 nomad_client: true
 nomad_server: false
