@@ -58,3 +58,7 @@ nomad_atlas_infrastructure: ''
 nomad_atlas_token: ''
 nomad_atlas_join: false
 nomad_atlas_endpoint: ''
+
+nomad_consul_addresses_http: false
+nomad_consul_auth: ''
+nomad_consul_token: ''

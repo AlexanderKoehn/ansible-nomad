@@ -13,6 +13,15 @@ enable_debug = true
 {% else %}
 enable_debug = false
 {% endif %}
+{% if nomad_consul_addresses_http %}
+consul {
+  address = "{{ nomad_consul_addresses_http }}:8500"
+  {% if nomad_consul_auth and nomad_consul_token %}
+  auth    = "{{ nomad_consul_auth }}"
+  token   = "{{ nomad_consul_token }}"
+  {% endif %}
+}
+{% endif %}
 ports {
   http = {{ nomad_ports_http }}
 {% if nomad_ports_rpc %}
