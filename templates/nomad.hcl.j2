@@ -13,15 +13,34 @@ enable_debug = true
 {% else %}
 enable_debug = false
 {% endif %}
-{% if nomad_consul_addresses_http %}
 consul {
-  address = "{{ nomad_consul_addresses_http }}:8500"
-  {% if nomad_consul_auth and nomad_consul_token %}
-  auth    = "{{ nomad_consul_auth }}"
-  token   = "{{ nomad_consul_token }}"
-  {% endif %}
-}
+  address = "{{ nomad_consul_address_http }}:8500"
+  auto_advertise = {{ nomad_consul_auto_advertise }}
+  checks_use_advertise = {{ nomad_consul_checks_use_advertise }}
+  client_auto_join = {{ nomad_consul_client_auto_join }}
+  client_service_name = "{{ nomad_consul_client_service_name }}"
+  server_auto_join = {{ nomad_consul_server_auto_join }}
+  server_service_name = "{{ nomad_consul_server_service_name }}"
+  ssl = {{ nomad_consul_ssl }}
+  verify_ssl = {{ nomad_consul_verify_ssl }}
+
+{% if nomad_consul_ca_file %}
+  ca_file = "{{ nomad_consul_ca_file }}"
 {% endif %}
+{% if nomad_consul_cert_file and nomad_consul_key_file %}
+  cert_file    = "{{ nomad_consul_cert_file }}"
+  key_file    = "{{ nomad_consul_key_file }}"
+{% endif %}
+
+{% if nomad_consul_auth %}
+  auth    = "{{ nomad_consul_auth }}"
+{% endif %}
+
+{% if nomad_consul_token %}
+  token   = "{{ nomad_consul_token }}"
+{% endif %}
+
+}
 ports {
   http = {{ nomad_ports_http }}
 {% if nomad_ports_rpc %}
