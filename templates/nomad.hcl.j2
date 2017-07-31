@@ -14,7 +14,7 @@ enable_debug = true
 enable_debug = false
 {% endif %}
 consul {
-  address = "{{ nomad_consul_address_http }}:8500"
+  address = "{{ nomad_consul_address_http }}"
   auto_advertise = {{ nomad_consul_auto_advertise }}
   checks_use_advertise = {{ nomad_consul_checks_use_advertise }}
   client_auto_join = {{ nomad_consul_client_auto_join }}
@@ -31,15 +31,12 @@ consul {
   cert_file    = "{{ nomad_consul_cert_file }}"
   key_file    = "{{ nomad_consul_key_file }}"
 {% endif %}
-
 {% if nomad_consul_auth %}
   auth    = "{{ nomad_consul_auth }}"
 {% endif %}
-
 {% if nomad_consul_token %}
   token   = "{{ nomad_consul_token }}"
 {% endif %}
-
 }
 ports {
   http = {{ nomad_ports_http }}

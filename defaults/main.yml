@@ -61,4 +61,15 @@ nomad_atlas_endpoint: ''
 
 nomad_consul_address_http: '127.0.0.1:8500'
 nomad_consul_auth: ''
+nomad_consul_auto_advertise: true
+nomad_consul_checks_use_advertise: false
+nomad_consul_client_auto_join: true
+nomad_consul_client_service_name: 'nomad-client'
+nomad_consul_server_auto_join: true
+nomad_consul_server_service_name: 'nomad'
+nomad_consul_ssl: false
+nomad_consul_verify_ssl: true
+nomad_consul_ca_file: ''
+nomad_consul_cert_file: ''
+nomad_consul_key_file: ''
 nomad_consul_token: ''
