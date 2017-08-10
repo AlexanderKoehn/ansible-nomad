@@ -7,7 +7,7 @@ client {
   enabled = false
 {% endif %}
 {% if nomad_client_network_interface | trim != '' %}
-  network_interface = nomad_client_network_interface
+  network_interface = "{{ nomad_client_network_interface }}"
 {% endif %}
 {% if nomad_client_state_dir and nomad_client %}
   state_dir = "{{ nomad_client_state_dir }}"
